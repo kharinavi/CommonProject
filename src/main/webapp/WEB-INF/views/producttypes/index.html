@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<br/>
+<div th:each="productType : ${producttypes}">
+
+    <a th:href="@{/producttypes/{id}(id=${productType.getId()})}"
+       th:text="${productType.getName()}">user</a>
+</div>
+<hr/>
+
+<a href="/producttypes/new">Create new product type</a>
+
+</body>
+</html>

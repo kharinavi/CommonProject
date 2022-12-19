@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<p th:text="${provider.getName() + ', ' + provider.getEmail()}">VALUE</p>
+<p th:text="${'Email: ' + provider.getEmail()}">VALUE</p>
+<p th:text="${provider.getId()}">VALUE</p>
+
+<a th:href="@{/providers/{id}/edit(id=${provider.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/providers/{id}(id=${provider.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
